@@ -1,0 +1,57 @@
+{
+    "name": "@dasred/wait",
+    "version": "0.1.0",
+    "type": "module",
+    "main": "src/index.js",
+    "scripts": {
+        "test": "mocha --inline-diffs",
+        "coverage": "c8 mocha --inline-diffs",
+        "postinstall": "mkdir -p ./node_modules/nyc/bin && ln -sf ../../c8/bin/c8.js ./node_modules/nyc/bin/nyc.js && echo https://memegenerator.net/img/instances/33868091.jpg"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DasRed/wait.git"
+    },
+    "author": "Marco Starker",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/DasRed/wait/issues"
+    },
+    "homepage": "https://github.com/DasRed/wait#readme",
+    "devDependencies": {
+        "c8": "^7.8.0",
+        "mocha": "^9.1.1",
+        "sinon": "^11.1.2"
+    },
+    "keywords": [
+        "wait",
+        "async wait",
+        "timeout",
+        "interval",
+        "waitor",
+        "waits",
+        "sleep",
+        "time",
+        "waits",
+        "sleeps",
+        "waiting",
+        "promise wait"
+    ],
+    "mocha": {
+        "recursive": true,
+        "extension": [
+            "test.js"
+        ]
+    },
+    "c8": {
+        "all": true,
+        "src": [
+            "./src"
+        ],
+        "check-coverage": false,
+        "reporter": [
+            "text",
+            "lcov"
+        ]
+    }
+}
