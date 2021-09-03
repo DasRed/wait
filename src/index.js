@@ -27,15 +27,15 @@ export default function wait(duration, ...args) {
  * @returns {Promise<void>}
  */
 export const condition = wait.condition = async function condition(condition, duration, maxIterations) {
-    let result = Boolean(await condition(i));
     let i      = 0;
+    let result = Boolean(await condition(i));
 
     while (result === false) {
-        await wait(duration);
+        i++;
 
+        await wait(duration);
         result = Boolean(await condition(i));
 
-        i++;
         if (result === false && maxIterations !== undefined && i >= maxIterations) {
             throw new Error('Condition never succeeded in iteration interval');
         }
